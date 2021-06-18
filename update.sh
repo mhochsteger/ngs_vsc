@@ -1,10 +1,11 @@
-cd ~/ngs_vsc/src
-git pull
-git submodule update --init --recursive
-cd /home/mhochste/build/global/ngsolve_nightly
-
 source setup_env.sh
 
-source $PREFIX/bin/activate
+cd $PREFIX/src
+git pull
+git submodule update --init --recursive
 
-make -j install
+source $PREFIX/install/bin/activate
+
+cd $PREFIX/build
+
+make -j8 install

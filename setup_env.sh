@@ -7,5 +7,6 @@ module load \
 	       intel-mkl/2020.4 \
 	       opencascade/7.5.0-gcc-10.2.0-6nsvk3o 
 
-PREFIX=~/ngs_vsc/install
-PATH=$PREFIX/bin:$PATH
+PREFIX=~/ngs_vsc
+export PATH=$PREFIX/install/bin:$PATH
+
