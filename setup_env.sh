@@ -1,7 +1,11 @@
-
 module purge
-module load ohpc
-module load mkl gnu8/8.3.0 autotools cmake openmpi3
+module load \
+	       gcc/10.2.0-gcc-9.1.0-2aa5hfe \
+	       python/3.9.4-gcc-10.2.0-y355ixy \
+	       cmake/3.17.3-gcc-9.1.0-tsjr5x6 \
+	       openmpi/4.1.0-gcc-9.1.0-2cmze2s \
+	       intel-mkl/2020.4 \
+	       opencascade/7.5.0-gcc-10.2.0-6nsvk3o 
 
-PREFIX=/opt/ohpc/pub/libs/gnu8/openmpi3/ngsolve/nightly
+PREFIX=~/ngs_vsc/install
 PATH=$PREFIX/bin:$PATH
