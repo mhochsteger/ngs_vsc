@@ -1,0 +1,5 @@
+BootStrap: docker
+From: ngsolve_jupyter
+
+%post
+/opt/conda/bin/pip install batchspawner
