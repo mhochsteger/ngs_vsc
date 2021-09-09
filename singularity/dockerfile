@@ -5,9 +5,31 @@ USER root
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get update && apt-get -y install cmake git g++ patch
-RUN apt-get update && apt-get -y install liboce-ocaf-dev libsuitesparse-dev zip libcgns-dev libhdf5-dev intel-mkl openmpi-bin libopenmpi-dev libopenblas64-dev
-RUN /opt/conda/bin/pip pip install webgui_jupyter_widgets mpi4py batchspawner
+RUN apt-get update && apt-get -y install \
+        build-essential                  \
+        cmake                            \
+        g++                              \
+        gcc                              \
+        git                              \
+        intel-mkl                        \
+        libcgns-dev                      \
+        libglu1-mesa-dev                 \
+        libhdf5-dev                      \
+        libocct-data-exchange-dev        \
+        libocct-draw-dev                 \
+        libopenmpi-dev                   \
+        libsuitesparse-dev               \
+        libtbb-dev                       \
+        libxi-dev                        \
+        libxmu-dev                       \
+        occt-misc                        \
+        openmpi-bin                      \
+        python3-dev                      \
+        tcl-dev                          \
+        tk-dev                           \
+        zip
+
+RUN /opt/conda/bin/pip install webgui_jupyter_widgets mpi4py batchspawner
 RUN cd && git clone https://github.com/ngsolve/ngsolve.git
 RUN cd ~/ngsolve && git submodule update --init --recursive
 RUN cd ~/ngsolve && mkdir build && cd build && cmake .. \
@@ -31,7 +53,8 @@ RUN cd ~/ngsolve && mkdir build && cd build && cmake .. \
   -DUSE_MUMPS=OFF \
   -DUSE_NATIVE_ARCH=ON \
   -DUSE_OCC=ON \
-  -DUSE_UMFPACK=ON
+  -DUSE_UMFPACK=ON \
+  -DBUILD_UMFPACK=OFF
 
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/conda/lib
 RUN cd ~/ngsolve/build && make -j install
