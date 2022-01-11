@@ -33,14 +33,14 @@ cmake  \
 	       -DMKL_SDL=OFF \
 	       -DUSE_NUMA=OFF \
 	       -DUSE_MUMPS=ON \
-	       -DUSE_OCC=OFF \
+	       -DUSE_OCC=ON \
+	       -DBUILD_OCC=ON \
 	       -DUSE_HYPRE=OFF \
 	       -DMUMPS_DIR=$MUMPS_DIR \
 	       -DUSE_GUI=OFF \
 	       -DUSE_CCACHE=ON \
 	       -DMAX_SYS_DIM=6 \
 	       $PREFIX/src
-	       #-DOCC_INCLUDE_DIR=/opt/ohpc/pub/spack/linux-centos7-x86_64/gcc-8.2.0/oce-0.18.2-oxfhodc55vsf7vxpdowkbciiah66fl2j/include/oce \
 
 make -j8 install
 
