@@ -9,5 +9,6 @@ cd ngs_vsc
 
 echo "module use ~/ngs_vsc" >> .bashrc
 echo "module load ngsolve" >> .bashrc
+source ~/.bashrc
 ```
 
