@@ -2,6 +2,7 @@ set -e
 
 source setup_env.sh
 echo "PREFIX = $PREFIX"
+echo "module use $PREFIX/privatemodule" >> ~/.bashrc
 
 cd $PREFIX
 git clone https://github.com/ngsolve/ngsolve.git src || true
