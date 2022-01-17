@@ -31,11 +31,10 @@ cmake  \
 	       -DUSE_MKL=ON \
 	       -DMKL_SDL=OFF \
 	       -DUSE_NUMA=OFF \
-	       -DUSE_MUMPS=ON \
+	       -DUSE_MUMPS=OFF \
 	       -DUSE_OCC=ON \
 	       -DBUILD_OCC=ON \
 	       -DUSE_HYPRE=OFF \
-	       -DMUMPS_DIR=$MUMPS_DIR \
 	       -DUSE_GUI=OFF \
 	       -DUSE_CCACHE=ON \
 	       -DMAX_SYS_DIM=6 \
