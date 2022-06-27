@@ -1,11 +1,10 @@
 module purge
 module load \
-	       gcc/10.2.0-gcc-9.1.0-2aa5hfe \
-	       python/3.9.4-gcc-10.2.0-y355ixy \
-	       cmake/3.17.3-gcc-9.1.0-tsjr5x6 \
-	       openmpi/4.1.0-gcc-9.1.0-2cmze2s \
-	       intel-mkl/2020.4 \
-	       opencascade/7.5.0-gcc-10.2.0-6nsvk3o 
+	       gcc/11.2.0-gcc-11.2.0-5i4t2bo\
+	       python/3.8.12-gcc-11.2.0-a5hqrgs \
+	       cmake/3.21.4-gcc-11.2.0-fmwwhz6 \
+	       openmpi/4.1.3-gcc-11.2.0-li5r24b \
+	       intel-oneapi-mkl/2022.0.2-gcc-11.2.0-2ugv2zs
 
 PREFIX=~/ngs_vsc
 export PATH=$PREFIX/install/bin:$PATH

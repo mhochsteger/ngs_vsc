@@ -21,25 +21,23 @@ mkdir -p $PREFIX/build
 cd $PREFIX/build
 
 cmake  \
-               -DCMAKE_PREFIX_PATH=$PREFIX/install \
+           -DCMAKE_PREFIX_PATH=$PREFIX/install \
 	       -DCMAKE_INSTALL_PREFIX=$PREFIX/install \
 	       -DCMAKE_BUILD_TYPE=Release \
 	       -DCMAKE_CXX_COMPILER=`which g++` \
 	       -DCMAKE_C_COMPILER=`which gcc` \
-               -DSCALAPACK_LIBRARY=$MKLROOT/lib/intel64/libmkl_scalapack_lp64.so \
+           -DSCALAPACK_LIBRARY=$MKLROOT/lib/intel64/libmkl_scalapack_lp64.so \
 	       -DUSE_MPI=ON \
 	       -DUSE_MKL=ON \
 	       -DMKL_SDL=OFF \
 	       -DUSE_NUMA=OFF \
-	       -DUSE_MUMPS=ON \
+	       -DUSE_MUMPS=OFF \
 	       -DUSE_OCC=OFF \
 	       -DUSE_HYPRE=OFF \
-	       -DMUMPS_DIR=$MUMPS_DIR \
 	       -DUSE_GUI=OFF \
 	       -DUSE_CCACHE=ON \
 	       -DMAX_SYS_DIM=6 \
 	       $PREFIX/src
-	       #-DOCC_INCLUDE_DIR=/opt/ohpc/pub/spack/linux-centos7-x86_64/gcc-8.2.0/oce-0.18.2-oxfhodc55vsf7vxpdowkbciiah66fl2j/include/oce \
 
 make -j8 install
 
